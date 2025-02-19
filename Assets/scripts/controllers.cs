@@ -31,6 +31,7 @@ public class controllers : MonoBehaviour
             if (_isGrounded)
             {
                 _rb.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
+                //_isGrounded=false;
             }
         }
     }
@@ -49,17 +50,19 @@ public class controllers : MonoBehaviour
     {
         if (collision.gameObject.tag == ("Ground"))
         {
-            print("------start");
+            /*print("------start");
             foreach (ContactPoint contact in collision.contacts)
             {
                 print(contact.thisCollider.name + " hit " + contact.otherCollider.name);
                 // Visualize the contact point
                 Debug.DrawRay(contact.point, contact.normal, Color.white);
-            }
-            print($"checkground - {checkGround()}");
+            }*/
+            /*bool checkgnd=checkGround();
+            print($"checkground - {checkgnd}");
             print($"expected value - {value}");
             print("------end");
             //if(collision.contacts[0].normal.y>0.5f)
+            if(checkgnd)*/
             _isGrounded = value;
         }
     }
